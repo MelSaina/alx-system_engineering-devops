@@ -15,3 +15,4 @@ script 9-John_Doe Write a script that sets the mode of the file hello to this:
 The file hello will be in the working directory
 You are not allowed to use commas for this script
 Script 10-mirror_permissions  script that sets the mode of the file hello the same as olleh’s mode.
+Script 11-directories_permissions a script that adds execute permission to all subdirectories of the current directory for the owner, the group owner and all other users. Regular files should not be changed.
