@@ -1,3 +1,4 @@
+![IMAGE](https://github.com/MelSaina/alx-system_engineering-devops/blob/master/0x09-web_infrastructure_design/0-simple_web_stack.png)
 1. User Accessing the Website:
 Let's start with a user who wants to access the website hosted at www.foobar.com.
 
