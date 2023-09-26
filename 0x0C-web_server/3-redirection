@@ -1,29 +1,16 @@
 #!/usr/bin/env bash
+# Installs nginx web server
 
-# Update the package list
-sudo apt-get update
-
-# Install Nginx
-sudo apt-get install -y nginx
-
-# Create an index.html file with the desired content (optional)
-echo "Hello World!" | sudo tee /var/www/html/index.html > /dev/null
-
-# Create a Nginx server block configuration for redirection
-echo 'server {
+apt-get update
+apt-get install -y nginx
+echo "Hello World" > /etc/nginx/html/index.html
+echo "server {
     listen 80;
     listen [::]:80 default_server;
-    root /var/www/html;
-    index index.html;
-
+    root   /etc/nginx/html;
+    index  index.html;
     location /redirect_me {
-        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+        return 301 https://twitter.com/Emmanue17280546;
     }
-
-    location / {
-        try_files $uri $uri/ =404;
-    }
-}' | sudo tee /etc/nginx/sites-available/default > /dev/null
-
-# Restart Nginx to apply the configuration
-sudo service nginx restart
+}" > /etc/nginx/sites-available/default
+service nginx restart
