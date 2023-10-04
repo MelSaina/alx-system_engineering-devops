@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-
+# Add custom response header to know the server name for debugging
 # Install nginx on the server
 apt-get -y update
 apt-get -y install nginx
 
-# Add custom response header to know the server name for debugging
+
 HOST_NAME=$(hostname)
 HEADER="\\\n\tadd_header X-Served-By $HOST_NAME;\n"
 FIND=$(grep "X-Served-By" /etc/nginx/sites-available/default)
