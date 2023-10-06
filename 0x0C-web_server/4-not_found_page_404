@@ -1,24 +1,26 @@
 #!/usr/bin/env bash
 # Installs nginx web server
+# Update the system package list
+sudo apt update
 
-apt-get update
-apt-get install -y nginx
-service nginx start
-mkdir /etc/nginx/html
-echo "Hello World!" > /etc/nginx/html/index.html
-echo "Ceci n'est pas une page" > /etc/nginx/html/404.html
-echo "server {
+# Install Nginx (if not already installed)
+sudo apt install nginx -y
+
+# Create a custom Nginx configuration file for the custom 404 page
+echo 'server {
     listen 80;
-    listen [::]:80 default_server;
-    root   /etc/nginx/html;
-    index  index.html;
-    location /redirect_me {
-        return 301 https://twitter.com/Emmanue17280546;
-    }
-    error_page 404 /404.html;
-    location = /404.html{
-        root /etc/nginx/html;
+    server_name localhost;
+
+    error_page 404 /custom_404.html;
+
+    location = /custom_404.html {
+        root /var/www/html;
         internal;
     }
-}" > /etc/nginx/sites-available/default
+
+    location / {
+        root /var/www/html;
+        index index.html;
+    }
+}' | sudo tee /etc/nginx/sites-available/custom_404
 service nginx restart
