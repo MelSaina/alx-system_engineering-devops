@@ -9,8 +9,7 @@
 - End Time: November 8, 2023, 17:45 UTC
 
 **Impact:**
-The outage impacted our core payment processing service, causing a delay in transaction processing for approximately 2 hours. This disruption affected 10% of our users, leading to frustration and potential financial inconvenience.
-
+The outage impacted our core payment processing service, causing a delay in transaction processing for approximately 2 hours.Yes 2 hours!!!This disruption affected 10% of our users, leading to frustration and potential financial inconvenience. Something i can't afford to have in this economy!
 **Root Cause:**
 The root cause was identified as a software bug in the latest deployment that went unnoticed during the testing phase.
 
