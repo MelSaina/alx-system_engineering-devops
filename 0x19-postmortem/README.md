@@ -1,5 +1,7 @@
 # Web Stack Outage Incident Postmortem
 
+![Tired](tired.jpg)
+
 ## Issue Summary:
 
 **Duration:**
